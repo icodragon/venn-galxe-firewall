@@ -64,7 +64,6 @@ async function setValue(key, value) {
       value: '0', // string, not number
       chainId: (await provider.getNetwork()).chainId.toString() // make sure it's a string
     };
-    console.log(txParams)
     
     console.log("🔹 Requesting approval from Venn...", JSON.stringify(txParams, null, 2));
     

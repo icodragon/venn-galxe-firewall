@@ -2,6 +2,11 @@
 FROM node:20-slim
 
 RUN apt-get update && apt-get install -y \
+    git \
+    make \
+    jq \
+    g++ \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Venn CLI globally
