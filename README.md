@@ -2,6 +2,8 @@
 
 This project demonstrates the integration of a simple storage DApp with the Venn Network firewall protection system. It includes a smart contract that can store and retrieve values, with additional security features provided by the Venn Network.
 
+> The documentation provides an example of running the project using Docker Compose. If you wish to run the project without Docker Compose, please familiarize yourself with the project structure and select an appropriate method accordingly
+
 ## Features
 
 - Simple key-value storage smart contract
@@ -12,7 +14,6 @@ This project demonstrates the integration of a simple storage DApp with the Venn
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
 - Docker and Docker Compose
 - Access to Holesky testnet
 - Venn Network testnet access
@@ -52,9 +53,9 @@ git clone <repository-url>
 cd venn-galxe-firewall
 ```
 
-2. Install dependencies:
+2. Build project
 ```bash
-npm install
+docker compose build
 ```
 
 3. Copy the environment file and configure it:
@@ -69,12 +70,17 @@ PRIVATE_KEY=your_private_key
 VENN_NODE_URL=https://signer2.testnet.venn.build/api/17000/sign
 ```
 
+5. To execute any commands:
+```bash
+docker compose run --rm venn-dev <command>
+```
+
 ## Usage
 
 ### Deploying the Contract
 
 ```bash
-./deploy.sh
+./venn-deploy.sh
 ```
 
 ### Registering with Venn Network
@@ -96,15 +102,3 @@ Available commands:
 - `has <key>` - Check if key exists
 - `exit` - Exit the script
 
-## Development
-
-The project uses Docker for development. To start the development environment:
-
-```bash
-docker compose up -d
-```
-
-To execute any commands:
-```bash
-docker compose run --rm venn-dev <command>
-```
