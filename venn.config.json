@@ -1,0 +1,10 @@
+{
+    "networks": {
+        "holesky": {
+            "contracts": {
+                "SimpleStorage": ""
+            },
+            "policyAddress": ""
+        }
+    }
+}

@@ -1,0 +1,14 @@
+services:
+  venn-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+    working_dir: /app
+    stdin_open: true
+    tty: true
